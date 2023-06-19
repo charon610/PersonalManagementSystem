@@ -1,0 +1,37 @@
+23.06.19 초기 설정
+타입스크립트 시작하기
+1. 기존 CRA 리액트가 존재할때 TS만 추가하기 -npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+2. tsconfig.json 생성(npx typescript --init) 아래 복붙
+{
+  "compilerOptions": {
+    "target": "es6", //어떤버전의 js로 컴파일할지 정의
+    "lib": [ //어떤 환경에서 사용하는지 정의(api자동완성 제공해줌)
+      "dom", //브라우저
+      "dom.iterable",
+      "esnext"
+    ],
+    "baseUrl": "./src", // 추가된 것 ./src를 절대 경로로 지정
+    "allowJs": true, //ts안에서 js허용(js파일 import가능)
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [ //컴파일할 폴더 입력. src의 모든파일 확인함
+    "src"
+  ],
+  "exclude": [
+    "node_modules"   
+  ],
+}
+
+
+3.라우터사용하기 위한 라우터 설치 npm install react-router-dom
