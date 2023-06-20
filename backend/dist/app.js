@@ -21,6 +21,7 @@ con.connect(function (err) {
         console.log('Connected!');
 });
 app.use(express_1.default.static(path_1.default.join(__dirname, '../public')));
+// 테스트
 app.get('/test', function (req, res) {
     console.log('enter OK1 >>>>');
     var sql = 'SELECT * FROM employee WHERE name=?';
